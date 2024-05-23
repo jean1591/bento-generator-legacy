@@ -21,7 +21,18 @@ export default function Home() {
         <div>
           <H1 title="Bento Design Generator" />
 
-          <Bento bento={bento} />
+          <div className="mt-12 flex items-center justify-center">
+            <button
+              className="px-5 py-2 text-lg border-2 rounded-full border-plum-500 text-polo-blue-100 bg-plum-500 shadow-md hover:border-plum-300 hover:text-plum-500 hover:bg-polo-blue-100 hover:shadow-xl transition ease-in-out duration-500"
+              onClick={() => setBento(generateRandomBento(6, 5))}
+            >
+              Regenerate
+            </button>
+          </div>
+
+          <div className="mt-12 p-5 border border-polo-blue-200 shadow-lg rounded-lg">
+            <Bento bento={bento} />
+          </div>
         </div>
       ) : (
         <div></div>
