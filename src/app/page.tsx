@@ -8,7 +8,7 @@ import { H1 } from "./designSystem/title/h1";
 import { renderToStaticMarkup } from "react-dom/server";
 
 export default function Home() {
-  const [bento, setBento] = useState(generateRandomBento(5, 4));
+  const [bento, setBento] = useState(generateRandomBento(8, 5));
   const [isClient, setIsClient] = useState<boolean>(false);
 
   useEffect(() => {
@@ -21,11 +21,7 @@ export default function Home() {
         <div>
           <H1 title="Bento Design Generator" />
 
-          {/* <Bento bento={bento} /> */}
-          <div className="mt-24 grid grid-cols-2 gap-x-10">
-            <Bento bento={bento} />
-            <code>{componentToString(bento)}</code>
-          </div>
+          <Bento bento={bento} />
         </div>
       ) : (
         <div></div>
