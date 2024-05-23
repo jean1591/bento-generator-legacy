@@ -1,9 +1,12 @@
 import {
   BASE_BLOCK,
   Bento as BentoType,
+  canCreateColSpan3,
+  canCreateRowSpan3,
+  isBlockAvailable,
+  isLargerThan,
   isLastColumn,
   isLastRow,
-  isNextColumnAvailable,
   shouldSkipBlock,
 } from ".";
 
@@ -59,7 +62,17 @@ export const generateRandomBento = (
         // span-2
         if (
           !isLastColumn(columnIndex, row.length) &&
-          isNextColumnAvailable(bento, rowIndex, columnIndex)
+          isBlockAvailable(bento, columnIndex + 1, rowIndex) &&
+          !isLastRow(rowIndex, bento.length)
+        ) {
+          // Merge two blocks horizontaly and verticaly
+          bento[rowIndex][columnIndex] = [2, 2];
+          bento[rowIndex][columnIndex + 1] = [0, 0];
+          bento[rowIndex + 1][columnIndex] = [0, 0];
+          bento[rowIndex + 1][columnIndex + 1] = [0, 0];
+        } else if (
+          !isLastColumn(columnIndex, row.length) &&
+          isBlockAvailable(bento, columnIndex + 1, rowIndex)
         ) {
           // Merge two blocks horizontaly
           bento[rowIndex][columnIndex] = [2, 1];
@@ -75,36 +88,3 @@ export const generateRandomBento = (
 
   return bento;
 };
-
-const isLargerThan = (randomNumber: number, threshold: number) =>
-  randomNumber > threshold;
-
-const canCreateColSpan3 = (
-  bento: BentoType,
-  columIndex: number,
-  rowIndex: number
-) => {
-  return (
-    columIndex < bento[rowIndex].length - 2 &&
-    isBlockAvailable(bento, columIndex + 1, rowIndex) &&
-    isBlockAvailable(bento, columIndex + 2, rowIndex)
-  );
-};
-
-const canCreateRowSpan3 = (
-  bento: BentoType,
-  columIndex: number,
-  rowIndex: number
-) => {
-  return (
-    rowIndex < bento.length - 2 &&
-    isBlockAvailable(bento, columIndex, rowIndex + 1) &&
-    isBlockAvailable(bento, columIndex, rowIndex + 2)
-  );
-};
-
-const isBlockAvailable = (
-  bento: BentoType,
-  columIndex: number,
-  rowIndex: number
-) => bento[rowIndex][columIndex] === BASE_BLOCK;
