@@ -8,7 +8,7 @@ import { H1 } from "./designSystem/title/h1";
 import { renderToStaticMarkup } from "react-dom/server";
 
 export default function Home() {
-  const [bento, setBento] = useState(generateRandomBento(8, 5));
+  const [bento, setBento] = useState(generateRandomBento(6, 5));
   const [isClient, setIsClient] = useState<boolean>(false);
 
   useEffect(() => {
