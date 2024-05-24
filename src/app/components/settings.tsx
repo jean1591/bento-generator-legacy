@@ -13,7 +13,11 @@ export const Settings = () => {
   return (
     <div className="mt-10 flex items-center justify-center gap-x-10">
       <div className="w-1/3">
-        <p className="mb-2 text-sm font-normal text-polo-blue-700">Columns</p>
+        <div className="mb-2 flex items-center justify-between">
+          <p className="text-sm">3</p>
+          <p className="text-sm font-normal">Columns</p>
+          <p className="text-sm">8</p>
+        </div>
 
         <input
           type="range"
@@ -28,7 +32,11 @@ export const Settings = () => {
       </div>
 
       <div className="w-1/3">
-        <p className="mb-2 text-sm font-normal text-polo-blue-700">Rows</p>
+        <div className="mb-2 flex items-center justify-between">
+          <p className="text-sm">3</p>
+          <p className="text-sm font-normal">Rows</p>
+          <p className="text-sm">8</p>
+        </div>
 
         <input
           type="range"
