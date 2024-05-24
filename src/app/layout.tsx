@@ -23,7 +23,7 @@ export default function RootLayout({
         <body
           className={classNames(
             inter.className,
-            "bg-polo-blue-100 text-polo-blue-600"
+            "bg-polo-blue-100/50 text-polo-blue-600"
           )}
         >
           <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-16">
