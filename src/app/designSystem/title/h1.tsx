@@ -6,7 +6,7 @@ export const H1 = ({ title }: { title: string }) => {
       </h1>
 
       <div className="flex items-center justify-center">
-        <div className="p-3 border-b-4 border-plum-500 w-1/3" />
+        <div className="p-3 border-b-4 border-plum-500 w-1/4" />
       </div>
     </div>
   );
