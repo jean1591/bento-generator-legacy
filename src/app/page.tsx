@@ -3,10 +3,8 @@
 import { Bento, Settings } from "./components";
 import { useEffect, useState } from "react";
 
-import { Bento as BentoType } from "@/utils";
 import { H1 } from "./designSystem";
 import { RootState } from "./lib/store/store";
-import { renderToStaticMarkup } from "react-dom/server";
 import { useSelector } from "react-redux";
 
 export default function Home() {
@@ -25,7 +23,7 @@ export default function Home() {
           <H1 title="Bento Generator" />
 
           <p className="text-center text-lg">
-            Parameter and generate your bento on the fly
+            Set parameters and generate your bento on the fly
           </p>
 
           <Settings />
@@ -36,8 +34,4 @@ export default function Home() {
       )}
     </div>
   );
-}
-
-function componentToString(bento: BentoType) {
-  return renderToStaticMarkup(<Bento bento={bento} />);
 }
