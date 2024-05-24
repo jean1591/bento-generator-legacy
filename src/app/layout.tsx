@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
+import { StoreProvider } from "./lib/store/storeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
-        <div className="bg-polo-blue-100 text-polo-blue-600 min-h-screen">
-          <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-16">
-            {children}
+    <StoreProvider>
+      <html lang="fr">
+        <body className={inter.className}>
+          <div className="bg-polo-blue-100 text-polo-blue-600 min-h-screen">
+            <div className="py-8 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-16">
+              {children}
+            </div>
           </div>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

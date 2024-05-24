@@ -1,10 +1,26 @@
 import { Bento as BentoType, classNames } from "@/utils";
 
+import { RootState } from "../lib/store/store";
 import { faker } from "@faker-js/faker";
+import { useSelector } from "react-redux";
 
 export const Bento = ({ bento }: { bento: BentoType }) => {
+  const columnNumber = useSelector(
+    (state: RootState) => state.bentoSettings.columnNumber
+  );
+
   return (
-    <div className="grid grid-cols-6 gap-2">
+    <div
+      className={classNames(
+        columnNumber === 3 ? "grid-cols-3" : "",
+        columnNumber === 4 ? "grid-cols-4" : "",
+        columnNumber === 5 ? "grid-cols-5" : "",
+        columnNumber === 6 ? "grid-cols-6" : "",
+        columnNumber === 7 ? "grid-cols-7" : "",
+        columnNumber === 8 ? "grid-cols-8" : "",
+        "grid gap-2"
+      )}
+    >
       {bento.map((row, rowIndex) =>
         row.map((size, columnIndex) => {
           if (size[0] !== 0 && size[1] !== 0) {
