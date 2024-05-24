@@ -18,7 +18,7 @@ export const Bento = ({ bento }: { bento: BentoType }) => {
         columnNumber === 6 ? "grid-cols-6" : "",
         columnNumber === 7 ? "grid-cols-7" : "",
         columnNumber === 8 ? "grid-cols-8" : "",
-        "grid gap-2"
+        "grid gap-2 mt-10 p-5 border border-polo-blue-200 shadow-lg rounded-lg"
       )}
     >
       {bento.map((row, rowIndex) =>
