@@ -63,7 +63,7 @@ export const Settings = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-x-2">
+      <div className="flex items-center justify-center gap-x-5">
         <button
           className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-500 text-polo-blue-100 bg-plum-500 shadow-md hover:border-plum-300 hover:text-plum-500 hover:bg-polo-blue-100 hover:shadow-xl transition ease-in-out duration-500"
           onClick={() => dispatch(setBento())}
@@ -73,11 +73,11 @@ export const Settings = () => {
         </button>
 
         <button
-          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-300 text-plum-500 bg-polo-blue-100 shadow-md hover:border-plum-500 hover:text-polo-blue-100 hover:bg-plum-500 hover:shadow-xl transition ease-in-out duration-500"
+          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-300 text-plum-500 bg-polo-blue-100 shadow-md hover:border-plum-500 hover:text-polo-blue-100 hover:bg-plum-500 hover:shadow-xl transition ease-in-out duration-500 text-nowrap"
           onClick={handleOnCopy}
         >
           <PiCopyLight className="h-6 w-6" />
-          Copy
+          Get the code
         </button>
       </div>
     </div>
