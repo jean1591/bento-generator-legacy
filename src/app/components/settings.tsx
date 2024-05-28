@@ -2,6 +2,7 @@ import { PiArrowClockwiseFill, PiCopyLight } from "react-icons/pi";
 import {
   setBento,
   setColumnNumber,
+  setDisplayCopyToast,
   setRowNumber,
 } from "../lib/store/features/bentoSettings/slice";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +17,8 @@ export const Settings = () => {
   const bento = useSelector((state: RootState) => state.bentoSettings.bento);
 
   const handleOnCopy = () => {
+    dispatch(setDisplayCopyToast(true));
+
     navigator.clipboard.writeText(
       renderToStaticMarkup(
         <StoreProvider>
@@ -23,6 +26,10 @@ export const Settings = () => {
         </StoreProvider>
       )
     );
+
+    setTimeout(() => {
+      dispatch(setDisplayCopyToast(false));
+    }, 5000);
   };
 
   return (
