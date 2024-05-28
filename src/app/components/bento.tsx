@@ -59,6 +59,6 @@ const classNamesGenerator = (size: number[]) => {
     // size[1] is row span
     size[1] === 3 ? "row-span-3" : "",
     size[1] === 2 ? "row-span-2" : "",
-    "border border-polo-blue-300 bg-polo-blue-200 rounded-lg min-h-20 flex items-center justify-center"
+    "border border-polo-blue-300 bg-polo-blue-200 dark:border-polo-blue-900 dark:bg-polo-blue-700 rounded-lg min-h-20 flex items-center justify-center"
   );
 };

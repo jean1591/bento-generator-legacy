@@ -1,7 +1,7 @@
 export const H1 = ({ title }: { title: string }) => {
   return (
     <div className="my-8">
-      <h1 className="text-center text-polo-blue-700 text-5xl font-semibold tracking-tight leading-4">
+      <h1 className="text-center text-polo-blue-700 dark:text-polo-blue-200 text-5xl font-semibold tracking-tight leading-4">
         {title}
       </h1>
 

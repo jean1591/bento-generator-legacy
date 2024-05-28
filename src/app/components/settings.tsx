@@ -65,7 +65,7 @@ export const Settings = () => {
 
       <div className="flex items-center justify-center gap-x-5">
         <button
-          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-500 text-polo-blue-100 bg-plum-500 shadow-md hover:border-plum-300 hover:text-plum-500 hover:bg-polo-blue-100 hover:shadow-xl transition ease-in-out duration-500"
+          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-500 hover:border-plum-300 dark:border-plum-700 dark:hover:border-plum-800 text-polo-blue-100 hover:text-plum-500 dark:hover:text-polo-blue-100 bg-plum-500 hover:bg-polo-blue-100 dark:bg-plum-700 dark:hover:bg-plum-800 shadow-md hover:shadow-xl transition ease-in-out duration-500"
           onClick={() => dispatch(setBento())}
         >
           <PiArrowClockwiseFill className="h-6 w-6" />
@@ -73,7 +73,7 @@ export const Settings = () => {
         </button>
 
         <button
-          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-300 text-plum-500 bg-polo-blue-100 shadow-md hover:border-plum-500 hover:text-polo-blue-100 hover:bg-plum-500 hover:shadow-xl transition ease-in-out duration-500 text-nowrap"
+          className="flex items-center justify-center gap-x-5 px-5 py-2 text-lg border-2 rounded-lg border-plum-300 hover:border-plum-500 dark:border-plum-800 dark:hover:border-plum-700 text-plum-500 hover:text-polo-blue-100 dark:text-polo-blue-100 dark:hover:text-polo-blue-100 bg-polo-blue-100 hover:bg-plum-500 dark:bg-plum-800 dark:hover:bg-plum-700 shadow-md hover:shadow-xl transition ease-in-out duration-500 text-nowrap"
           onClick={handleOnCopy}
         >
           <PiCopyLight className="h-6 w-6" />
