@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { H1 } from "./designSystem";
 import { RootState } from "./lib/store/store";
 import { useSelector } from "react-redux";
+import { DarkMode } from "./components/darkMode";
 
 export default function Home() {
   const [isClient, setIsClient] = useState<boolean>(false);
@@ -20,6 +21,8 @@ export default function Home() {
     <div>
       {isClient ? (
         <div>
+          <DarkMode/>
+          
           <H1 title="Bento Generator" />
 
           <p className="text-center text-lg">
